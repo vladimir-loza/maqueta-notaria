@@ -1,0 +1,587 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-11T00:00:00Z",
+  "title": "Design System: Notaría · Expedientes",
+  "extensions": {
+    "colorMeta": {
+      "vino": {
+        "role": "secondary",
+        "displayName": "Vino de agenda",
+        "canonical": "#5e1f2b",
+        "tonalRamp": [
+          "#2a0e13",
+          "#3d141c",
+          "#4a1822",
+          "#5e1f2b",
+          "#8e626b",
+          "#b79aa0",
+          "#d9bfc4",
+          "#efe9ea"
+        ]
+      },
+      "vino-hondo": {
+        "role": "secondary",
+        "displayName": "Vino hondo",
+        "canonical": "#4a1822",
+        "tonalRamp": [
+          "#2a0e13",
+          "#3d141c",
+          "#4a1822",
+          "#5e1f2b",
+          "#8e626b",
+          "#b79aa0",
+          "#d9bfc4",
+          "#efe9ea"
+        ]
+      },
+      "vino-claro": {
+        "role": "secondary",
+        "displayName": "Vino claro",
+        "canonical": "#d9bfc4",
+        "tonalRamp": [
+          "#2a0e13",
+          "#3d141c",
+          "#4a1822",
+          "#5e1f2b",
+          "#8e626b",
+          "#b79aa0",
+          "#d9bfc4",
+          "#efe9ea"
+        ]
+      },
+      "tinta": {
+        "role": "primary",
+        "displayName": "Tinta azul",
+        "canonical": "#1d4fa3",
+        "tonalRamp": [
+          "#0d2449",
+          "#13336a",
+          "#163d80",
+          "#1d4fa3",
+          "#6184bf",
+          "#99b0d6",
+          "#c9d8ee",
+          "#e8edf6"
+        ]
+      },
+      "tinta-hondo": {
+        "role": "primary",
+        "displayName": "Tinta honda",
+        "canonical": "#163d80",
+        "tonalRamp": [
+          "#0d2449",
+          "#13336a",
+          "#163d80",
+          "#1d4fa3",
+          "#6184bf",
+          "#99b0d6",
+          "#c9d8ee",
+          "#e8edf6"
+        ]
+      },
+      "tinta-clara": {
+        "role": "primary",
+        "displayName": "Tinta clara",
+        "canonical": "#c9d8ee",
+        "tonalRamp": [
+          "#0d2449",
+          "#13336a",
+          "#163d80",
+          "#1d4fa3",
+          "#6184bf",
+          "#99b0d6",
+          "#c9d8ee",
+          "#e8edf6"
+        ]
+      },
+      "plumon": {
+        "role": "tertiary",
+        "displayName": "Rojo plumón",
+        "canonical": "#c8302e",
+        "tonalRamp": [
+          "#5a1615",
+          "#821f1e",
+          "#9e1f1d",
+          "#c8302e",
+          "#d86e6d",
+          "#e6a2a1",
+          "#f1cbcb",
+          "#fbe3e2"
+        ]
+      },
+      "plumon-hondo": {
+        "role": "tertiary",
+        "displayName": "Plumón hondo",
+        "canonical": "#9e1f1d",
+        "tonalRamp": [
+          "#5a1615",
+          "#821f1e",
+          "#9e1f1d",
+          "#c8302e",
+          "#d86e6d",
+          "#e6a2a1",
+          "#f1cbcb",
+          "#fbe3e2"
+        ]
+      },
+      "plumon-claro": {
+        "role": "tertiary",
+        "displayName": "Plumón claro",
+        "canonical": "#fbe3e2",
+        "tonalRamp": [
+          "#5a1615",
+          "#821f1e",
+          "#9e1f1d",
+          "#c8302e",
+          "#d86e6d",
+          "#e6a2a1",
+          "#f1cbcb",
+          "#fbe3e2"
+        ]
+      },
+      "marca": {
+        "role": "tertiary",
+        "displayName": "Amarillo marcatextos",
+        "canonical": "#f2dc4a",
+        "tonalRamp": [
+          "#6b5600",
+          "#9d8f30",
+          "#c9ae10",
+          "#f2dc4a",
+          "#f6e680",
+          "#f9efae",
+          "#fbf1bf",
+          "#fefced"
+        ]
+      },
+      "marca-borde": {
+        "role": "tertiary",
+        "displayName": "Borde de marcatextos",
+        "canonical": "#c9ae10",
+        "tonalRamp": [
+          "#6b5600",
+          "#9d8f30",
+          "#c9ae10",
+          "#f2dc4a",
+          "#f6e680",
+          "#f9efae",
+          "#fbf1bf",
+          "#fefced"
+        ]
+      },
+      "marca-claro": {
+        "role": "tertiary",
+        "displayName": "Marcatextos claro",
+        "canonical": "#fbf1bf",
+        "tonalRamp": [
+          "#6b5600",
+          "#9d8f30",
+          "#c9ae10",
+          "#f2dc4a",
+          "#f6e680",
+          "#f9efae",
+          "#fbf1bf",
+          "#fefced"
+        ]
+      },
+      "ocre": {
+        "role": "tertiary",
+        "displayName": "Ocre",
+        "canonical": "#6b5600",
+        "tonalRamp": [
+          "#6b5600",
+          "#9d8f30",
+          "#c9ae10",
+          "#f2dc4a",
+          "#f6e680",
+          "#f9efae",
+          "#fbf1bf",
+          "#fefced"
+        ]
+      },
+      "verde": {
+        "role": "tertiary",
+        "displayName": "Verde hecho",
+        "canonical": "#2f7a4b",
+        "tonalRamp": [
+          "#153722",
+          "#1f5b37",
+          "#286840",
+          "#2f7a4b",
+          "#6da281",
+          "#a1c3ae",
+          "#ddefe3",
+          "#eaf2ed"
+        ]
+      },
+      "verde-hondo": {
+        "role": "tertiary",
+        "displayName": "Verde hondo",
+        "canonical": "#1f5b37",
+        "tonalRamp": [
+          "#153722",
+          "#1f5b37",
+          "#286840",
+          "#2f7a4b",
+          "#6da281",
+          "#a1c3ae",
+          "#ddefe3",
+          "#eaf2ed"
+        ]
+      },
+      "verde-claro": {
+        "role": "tertiary",
+        "displayName": "Verde claro",
+        "canonical": "#ddefe3",
+        "tonalRamp": [
+          "#153722",
+          "#1f5b37",
+          "#286840",
+          "#2f7a4b",
+          "#6da281",
+          "#a1c3ae",
+          "#ddefe3",
+          "#eaf2ed"
+        ]
+      },
+      "papel": {
+        "role": "neutral",
+        "displayName": "Papel frío",
+        "canonical": "#f5f6f2",
+        "tonalRamp": [
+          "#6e6f6d",
+          "#9fa09d",
+          "#d0d1ce",
+          "#f5f6f2",
+          "#f8f9f6",
+          "#fafbf9",
+          "#fcfdfc",
+          "#ffffff"
+        ]
+      },
+      "hoja": {
+        "role": "neutral",
+        "displayName": "Hoja",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#6e6f6d",
+          "#9fa09d",
+          "#d0d1ce",
+          "#f5f6f2",
+          "#f8f9f6",
+          "#fafbf9",
+          "#fcfdfc",
+          "#ffffff"
+        ]
+      },
+      "celda": {
+        "role": "neutral",
+        "displayName": "Celda",
+        "canonical": "#eef2f7",
+        "tonalRamp": [
+          "#0e1012",
+          "#1e2329",
+          "#56606b",
+          "#56606b",
+          "#a3adb8",
+          "#c3ccd6",
+          "#d5deea",
+          "#eef2f7"
+        ]
+      },
+      "raya": {
+        "role": "neutral",
+        "displayName": "Raya",
+        "canonical": "#d5deea",
+        "tonalRamp": [
+          "#0e1012",
+          "#1e2329",
+          "#56606b",
+          "#56606b",
+          "#a3adb8",
+          "#c3ccd6",
+          "#d5deea",
+          "#eef2f7"
+        ]
+      },
+      "raya-suave": {
+        "role": "neutral",
+        "displayName": "Raya suave",
+        "canonical": "#e8edf3",
+        "tonalRamp": [
+          "#0e1012",
+          "#1e2329",
+          "#56606b",
+          "#56606b",
+          "#a3adb8",
+          "#c3ccd6",
+          "#d5deea",
+          "#eef2f7"
+        ]
+      },
+      "texto": {
+        "role": "neutral",
+        "displayName": "Texto",
+        "canonical": "#1e2329",
+        "tonalRamp": [
+          "#0e1012",
+          "#1e2329",
+          "#56606b",
+          "#56606b",
+          "#a3adb8",
+          "#c3ccd6",
+          "#d5deea",
+          "#eef2f7"
+        ]
+      },
+      "sub": {
+        "role": "neutral",
+        "displayName": "Sub",
+        "canonical": "#56606b",
+        "tonalRamp": [
+          "#0e1012",
+          "#1e2329",
+          "#56606b",
+          "#56606b",
+          "#a3adb8",
+          "#c3ccd6",
+          "#d5deea",
+          "#eef2f7"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Título de página."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Títulos de sección y de etapa, numerados."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Folio y tipo de trámite en filas; subtítulos de etapa."
+      },
+      "fecha": {
+        "displayName": "Fecha",
+        "purpose": "Fecha de vencimiento en su columna."
+      },
+      "cifra": {
+        "displayName": "Cifra",
+        "purpose": "Montos del resumen de saldo."
+      },
+      "regla": {
+        "displayName": "Regla",
+        "purpose": "Número de día en las celdas de la regla."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto de tablas, controles y botones."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Etiquetas de campo."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Segundas líneas, ayudas y leyenda."
+      },
+      "column-head": {
+        "displayName": "Column-head",
+        "purpose": "Encabezados de columna, en mayúsculas."
+      }
+    },
+    "shadows": [
+      {
+        "name": "subrayado-notaria",
+        "value": "inset 0 -4px 0 var(--color-tinta)",
+        "purpose": "Marca de pluma: vencimiento del plazo de notaría en la regla. No es elevación."
+      },
+      {
+        "name": "filete-vencido-antes",
+        "value": "inset 3px 0 0 var(--color-plumon)",
+        "purpose": "Primera celda de la regla cuando el plazo venció antes de la ventana."
+      },
+      {
+        "name": "halo-foco-control",
+        "value": "0 0 0 2px rgb(29 79 163 / 0.2)",
+        "purpose": "Foco de entradas y selectores, junto al borde tinta."
+      }
+    ],
+    "motion": [
+      {
+        "name": "transicion-color",
+        "value": "150ms (transition-colors)",
+        "purpose": "Hover de botones, enlaces del riel y pestañas; sólo color."
+      },
+      {
+        "name": "resalta",
+        "value": "2.4s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Destello marcatextos claro al llegar a un paso; desactivado con prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón primario",
+      "kind": "button",
+      "refersTo": "boton-primario",
+      "description": "Acción principal del encabezado; uno por pantalla.",
+      "html": "<button class=\"ds-btn-primario\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"/></svg>Nuevo expediente</button>",
+      "css": ".ds-btn-primario{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;font:500 14px/1 'Public Sans',system-ui,sans-serif;color:#fff;background:var(--color-tinta,#1d4fa3);border:1px solid var(--color-tinta,#1d4fa3);border-radius:6px;cursor:pointer;transition:background-color .15s,border-color .15s}.ds-btn-primario:hover{background:var(--color-tinta-hondo,#163d80);border-color:var(--color-tinta-hondo,#163d80)}.ds-btn-primario:focus-visible{outline:2px solid var(--color-tinta,#1d4fa3);outline-offset:2px}.ds-btn-primario:disabled{opacity:.45;cursor:not-allowed}"
+    },
+    {
+      "name": "Botón secundario",
+      "kind": "button",
+      "refersTo": "boton-secundario",
+      "description": "Variante por defecto: acciones de apoyo.",
+      "html": "<button class=\"ds-btn-secundario\">Descartar</button>",
+      "css": ".ds-btn-secundario{display:inline-flex;align-items:center;height:36px;padding:0 14px;font:500 14px/1 'Public Sans',system-ui,sans-serif;color:var(--color-texto,#1e2329);background:var(--color-hoja,#fff);border:1px solid #c3ccd6;border-radius:6px;cursor:pointer;transition:color .15s,border-color .15s}.ds-btn-secundario:hover{color:var(--color-tinta,#1d4fa3);border-color:var(--color-tinta,#1d4fa3)}.ds-btn-secundario:focus-visible{outline:2px solid var(--color-tinta,#1d4fa3);outline-offset:2px}"
+    },
+    {
+      "name": "Botón fantasma chico",
+      "kind": "button",
+      "refersTo": "boton-fantasma",
+      "description": "Acciones de fila: Reabrir, Marcar enviado, eliminar.",
+      "html": "<button class=\"ds-btn-fantasma\">Reabrir</button>",
+      "css": ".ds-btn-fantasma{display:inline-flex;align-items:center;height:28px;padding:0 10px;font:500 13px/1 'Public Sans',system-ui,sans-serif;color:var(--color-tinta,#1d4fa3);background:transparent;border:1px solid transparent;border-radius:6px;cursor:pointer;transition:background-color .15s}.ds-btn-fantasma:hover{background:rgb(201 216 238 / .5)}.ds-btn-fantasma:focus-visible{outline:2px solid var(--color-tinta,#1d4fa3);outline-offset:2px}"
+    },
+    {
+      "name": "Botón de peligro",
+      "kind": "button",
+      "refersTo": "boton-peligro",
+      "description": "Acción destructiva o de salida sin guardar.",
+      "html": "<button class=\"ds-btn-peligro\">Salir sin guardar</button>",
+      "css": ".ds-btn-peligro{display:inline-flex;align-items:center;height:36px;padding:0 14px;font:500 14px/1 'Public Sans',system-ui,sans-serif;color:var(--color-plumon-hondo,#9e1f1d);background:var(--color-hoja,#fff);border:1px solid #e4b3b2;border-radius:6px;cursor:pointer;transition:background-color .15s}.ds-btn-peligro:hover{background:var(--color-plumon-claro,#fbe3e2)}.ds-btn-peligro:focus-visible{outline:2px solid var(--color-tinta,#1d4fa3);outline-offset:2px}"
+    },
+    {
+      "name": "Campo de texto",
+      "kind": "input",
+      "refersTo": "entrada",
+      "description": "Etiqueta 13px arriba, control de 36px con foco tinta.",
+      "html": "<label class=\"ds-campo\"><span>Concepto</span><input class=\"ds-entrada\" placeholder=\"Ej. Avalúo comercial\"></label>",
+      "css": ".ds-campo{display:flex;flex-direction:column;gap:4px;font:500 13px 'Public Sans',system-ui,sans-serif;color:var(--color-sub,#56606b)}.ds-entrada{height:36px;padding:0 10px;font:400 14px 'Public Sans',system-ui,sans-serif;color:var(--color-texto,#1e2329);background:var(--color-hoja,#fff);border:1px solid #c3ccd6;border-radius:6px;caret-color:var(--color-tinta,#1d4fa3)}.ds-entrada::placeholder{color:#56606b}.ds-entrada:hover{border-color:#9aa8b8}.ds-entrada:focus{outline:none;border-color:var(--color-tinta,#1d4fa3);box-shadow:0 0 0 2px rgb(29 79 163 / .2)}"
+    },
+    {
+      "name": "Etiquetas de estado",
+      "kind": "chip",
+      "refersTo": "etiqueta-vencido",
+      "description": "Par claro/hondo de una tinta; sólo en la columna de estado.",
+      "html": "<span class=\"ds-et ds-et-vencido\">Vencido</span> <span class=\"ds-et ds-et-hoy\">Hoy</span> <span class=\"ds-et ds-et-neutra\">3 días</span> <span class=\"ds-et ds-et-tiempo\">A tiempo</span>",
+      "css": ".ds-et{display:inline-block;padding:2px 8px;border-radius:4px;font:600 12px/1.33 'Public Sans',system-ui,sans-serif;white-space:nowrap}.ds-et-vencido{background:var(--color-plumon-claro,#fbe3e2);color:var(--color-plumon-hondo,#9e1f1d)}.ds-et-hoy{background:var(--color-marca-claro,#fbf1bf);color:var(--color-ocre,#6b5600)}.ds-et-neutra{background:var(--color-celda,#eef2f7);color:var(--color-texto,#1e2329)}.ds-et-tiempo{background:var(--color-verde-claro,#ddefe3);color:var(--color-verde-hondo,#1f5b37)}"
+    },
+    {
+      "name": "Riel de navegación",
+      "kind": "nav",
+      "refersTo": "riel",
+      "description": "Riel vino de 232px; activo en papel como pestaña de agenda.",
+      "html": "<nav class=\"ds-riel\"><p class=\"ds-riel-marca\">Notaría · Expedientes</p><a class=\"ds-riel-enlace ds-activo\" href=\"#\"><span>Vencimientos</span><b class=\"ds-riel-alerta\">4</b></a><a class=\"ds-riel-enlace\" href=\"#\"><span>Expedientes</span><b class=\"ds-riel-cuenta\">12</b></a><a class=\"ds-riel-enlace\" href=\"#\"><span>Cuenta corriente</span></a></nav>",
+      "css": ".ds-riel{width:232px;padding:20px 16px;background:var(--color-vino,#5e1f2b);display:flex;flex-direction:column;gap:4px}.ds-riel-marca{margin:0 0 20px;padding:0 10px;font:700 15px 'Barlow Semi Condensed','Public Sans',sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#fff}.ds-riel-enlace{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:6px;font:500 14px 'Public Sans',system-ui,sans-serif;color:#f3e6e8;text-decoration:none;transition:background-color .15s}.ds-riel-enlace span{flex:1}.ds-riel-enlace:hover{background:var(--color-vino-hondo,#4a1822)}.ds-riel-enlace.ds-activo{background:var(--color-papel,#f5f6f2);color:var(--color-vino,#5e1f2b)}.ds-riel-enlace:focus-visible{outline:2px solid var(--color-tinta,#1d4fa3);outline-offset:2px}.ds-riel-alerta{padding:0 6px;border-radius:9999px;background:var(--color-plumon,#c8302e);color:#fff;font:600 12px 'Public Sans',sans-serif}.ds-riel-cuenta{font:600 12px 'Public Sans',sans-serif;color:var(--color-vino-claro,#d9bfc4)}"
+    },
+    {
+      "name": "Pestañas",
+      "kind": "nav",
+      "description": "Pestañas sobre hairline; activa con subrayado vino de 3px.",
+      "html": "<div class=\"ds-pestanas\" role=\"tablist\"><button role=\"tab\" aria-selected=\"false\">Vencidos <b class=\"ds-alerta\">3</b></button><button role=\"tab\" aria-selected=\"true\">Esta semana <b>8</b></button><button role=\"tab\" aria-selected=\"false\">Próximos 15 días <b>11</b></button></div>",
+      "css": ".ds-pestanas{display:flex;gap:4px;border-bottom:1px solid var(--color-raya,#d5deea)}.ds-pestanas button{margin-bottom:-1px;padding:10px 14px;background:none;border:0;border-bottom:3px solid transparent;font:500 14px 'Public Sans',system-ui,sans-serif;color:var(--color-sub,#56606b);cursor:pointer;transition:color .15s}.ds-pestanas button:hover{color:var(--color-texto,#1e2329)}.ds-pestanas button[aria-selected=true]{border-bottom-color:var(--color-vino,#5e1f2b);color:var(--color-texto,#1e2329)}.ds-pestanas b{margin-left:6px;font-weight:600;color:var(--color-sub,#56606b)}.ds-pestanas b.ds-alerta{color:var(--color-plumon,#c8302e)}.ds-pestanas button:focus-visible{outline:2px solid var(--color-tinta,#1d4fa3);outline-offset:2px}"
+    },
+    {
+      "name": "Regla de días",
+      "kind": "custom",
+      "refersTo": "celda-regla",
+      "description": "Componente firma: tira de celdas-día de 22px con hoy, inhábiles, plazo corriendo, plazo de notaría subrayado y fecha de ley circulada.",
+      "html": "<div class=\"ds-regla\" role=\"img\" aria-label=\"Plazo notaría: 13 nov. Plazo de ley: 17 nov.\"><span>9</span><span class=\"ds-inh\">10</span><span class=\"ds-hoy\">11</span><span class=\"ds-corre\">12</span><span class=\"ds-corre ds-notaria\">13</span><span class=\"ds-corre\">14</span><span class=\"ds-inh\">15</span><span class=\"ds-inh\">16</span><span class=\"ds-ley\">17</span><span>18</span><span>19</span></div>",
+      "css": ".ds-regla{display:flex;gap:2px;font:600 11px/1 'Barlow Semi Condensed','Public Sans',sans-serif;font-variant-numeric:tabular-nums}.ds-regla span{width:22px;height:26px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:3px;box-sizing:border-box;border-radius:3px;background:var(--color-celda,#eef2f7);color:#56606b}.ds-regla .ds-hoy{background:var(--color-marca,#f2dc4a);color:var(--color-texto,#1e2329);outline:2px solid var(--color-marca-borde,#c9ae10)}.ds-regla .ds-inh{background:repeating-linear-gradient(135deg,#f7dada 0 3px,#fff 3px 6px);color:var(--color-plumon,#c8302e)}.ds-regla .ds-corre{background:var(--color-tinta-clara,#c9d8ee);color:var(--color-tinta-hondo,#163d80)}.ds-regla .ds-notaria{box-shadow:inset 0 -4px 0 var(--color-tinta,#1d4fa3)}.ds-regla .ds-ley{border-radius:9999px;border:2px solid var(--color-plumon,#c8302e);background:var(--color-hoja,#fff);color:var(--color-plumon,#c8302e)}"
+    },
+    {
+      "name": "Marca de estado",
+      "kind": "custom",
+      "description": "Celda fija de 16px: pendiente, hecho, no se solicita.",
+      "html": "<span class=\"ds-marcas\"><svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" role=\"img\" aria-label=\"Pendiente\"><circle cx=\"8\" cy=\"8\" r=\"5.25\" fill=\"none\" stroke=\"#56606b\" stroke-width=\"1.5\"/></svg><svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" role=\"img\" aria-label=\"Hecho\"><circle cx=\"8\" cy=\"8\" r=\"6\" fill=\"#2f7a4b\"/></svg><svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" role=\"img\" aria-label=\"No se solicita\"><circle cx=\"8\" cy=\"8\" r=\"5.25\" fill=\"none\" stroke=\"#a3adb8\" stroke-width=\"1.5\"/><line x1=\"2\" y1=\"14\" x2=\"14\" y2=\"2\" stroke=\"#a3adb8\" stroke-width=\"1.5\"/></svg></span>",
+      "css": ".ds-marcas{display:inline-flex;gap:12px;align-items:center}"
+    }
+  ],
+  "narrative": {
+    "northStar": "La agenda de despacho",
+    "overview": "**Creative North Star: \"La agenda de despacho\"**\n\nEl sistema es la agenda de papel del contador de notaría pasada a pantalla: un riel vino como el lomo de la agenda, hojas blancas cuadradas sobre papel frío, hairlines azul pálido como el rayado del cuaderno, y cuatro instrumentos de escritura con un solo oficio cada uno. La tinta azul es lo que se puede tocar y el plazo propio de la notaría; el plumón rojo tacha lo inhábil, marca lo vencido y circula la fecha fatal de ley; el marcatextos amarillo es hoy; el verde es lo hecho. Ningún color decora.\n\nLa densidad es de jornada completa: tablas de 14px con cifras tabulares, filas de 12px de alto de relleno, sin tarjetas KPI ni insignias sueltas. La firma del sistema es la regla de días: una tira de celdas-día de módulo fijo que aparece igual en la bandeja de vencimientos, en el detalle del expediente y en la vista previa del constructor de trámites, de modo que un plazo se lee siempre en la misma geometría.\n\nEl estado de un paso no es una píldora de color sino una marca en celda fija, como en la agenda: círculo vacío pendiente, círculo lleno hecho, círculo tachado no se solicita.",
+    "keyCharacteristics": [
+      "Riel vino de 232px con el ítem activo en papel, como pestaña de agenda.",
+      "Hojas blancas sin radio con hairline azul pálido; nada flota.",
+      "Cuatro tintas con un solo significado cada una (tinta, plumón, marcatextos, verde).",
+      "Barlow Semi Condensed para fechas, folios, títulos y cifras; Public Sans para todo lo demás; cifras tabulares en toda la app.",
+      "La regla de días con módulo de 22px es el componente firma y se reutiliza sin variar su medida."
+    ],
+    "rules": [
+      {
+        "name": "The Una Tinta, Un Oficio Rule",
+        "body": "Cada tinta significa una sola cosa: azul es accionable o plazo de notaría, rojo es inhábil, vencido o fatal, amarillo es hoy, verde es hecho. Si un elemento no tiene ese significado, no lleva esa tinta.",
+        "section": "colors"
+      },
+      {
+        "name": "The Marcatextos Rule",
+        "body": "El amarillo sólido marca únicamente el día de hoy (y la selección de texto). Su versión clara se reserva para lo que pide atención ahora.",
+        "section": "colors"
+      },
+      {
+        "name": "The Vino Encuadernado Rule",
+        "body": "El vino vive en el riel y en la pestaña activa; nunca en botones, etiquetas ni datos.",
+        "section": "colors"
+      },
+      {
+        "name": "The Fecha Condensada Rule",
+        "body": "Fechas, folios, números de día, montos destacados y títulos van en Barlow Semi Condensed; frases y datos de lectura van en Public Sans.",
+        "section": "typography"
+      },
+      {
+        "name": "The Columna Fija Rule",
+        "body": "Las cifras son tabulares en toda la app (declarado en la raíz); no se desactiva en ningún componente.",
+        "section": "typography"
+      },
+      {
+        "name": "The Módulo Día Rule",
+        "body": "Toda celda-día mide 22px de ancho con 2px de hueco, en cualquier regla de la app. La ventana se ajusta cambiando el número de días, nunca el tamaño de la celda.",
+        "section": "layout"
+      },
+      {
+        "name": "The Hoja Plana Rule",
+        "body": "Las superficies no se elevan. Si algo necesita destacarse, se marca con una tinta, no con una sombra.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Esquina Por Función Rule",
+        "body": "El radio indica qué se toca: hojas rectas, controles redondeados, y el círculo sólo para lo que en la agenda se circularía.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** mostrar todo plazo con la regla de días, con el módulo de 22px y 2px de hueco.",
+      "**Do** reservar tinta para lo accionable y el plazo de notaría, plumón para inhábil, vencido y fecha fatal, marcatextos para hoy y verde para hecho.",
+      "**Do** escribir fechas, folios, días y montos en Barlow Semi Condensed con cifras tabulares.",
+      "**Do** poner el contenido en hojas blancas sin radio con hairline raya sobre el fondo papel.",
+      "**Do** indicar el estado de un paso con la marca en celda fija (pendiente, hecho, no se solicita) y una etiqueta clara/honda sólo en la columna de estado.",
+      "**Do** mantener un único botón primario tinta por encabezado."
+    ],
+    "donts": [
+      "**Don't** usar tarjetas KPI, paneles de métricas ni insignias de color sueltas fuera de la columna de estado.",
+      "**Don't** proyectar sombras para elevar superficies; las sombras interiores de la regla son marcas, no profundidad.",
+      "**Don't** usar el vino fuera del riel y de la pestaña activa.",
+      "**Don't** pintar con amarillo sólido nada que no sea el día de hoy.",
+      "**Don't** cambiar el tamaño de la celda-día para encajar una ventana; se cambia el número de días."
+    ]
+  }
+}

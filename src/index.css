@@ -1,0 +1,101 @@
+@import '@fontsource/public-sans/400.css';
+@import '@fontsource/public-sans/500.css';
+@import '@fontsource/public-sans/600.css';
+@import '@fontsource/public-sans/700.css';
+@import '@fontsource/barlow-semi-condensed/500.css';
+@import '@fontsource/barlow-semi-condensed/600.css';
+@import '@fontsource/barlow-semi-condensed/700.css';
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Public Sans', system-ui, sans-serif;
+  --font-cond: 'Barlow Semi Condensed', 'Public Sans', sans-serif;
+
+  /* Agenda de despacho */
+  --color-vino: #5e1f2b;
+  --color-vino-hondo: #4a1822;
+  --color-vino-claro: #d9bfc4;
+  --color-papel: #f5f6f2;
+  --color-hoja: #ffffff;
+  --color-raya: #d5deea;
+  --color-raya-suave: #e8edf3;
+  --color-tinta: #1d4fa3;
+  --color-tinta-hondo: #163d80;
+  --color-tinta-clara: #c9d8ee;
+  --color-plumon: #c8302e;
+  --color-plumon-hondo: #9e1f1d;
+  --color-plumon-claro: #fbe3e2;
+  --color-marca: #f2dc4a;
+  --color-marca-borde: #c9ae10;
+  --color-marca-claro: #fbf1bf;
+  --color-ocre: #6b5600;
+  --color-verde: #2f7a4b;
+  --color-verde-hondo: #1f5b37;
+  --color-verde-claro: #ddefe3;
+  --color-texto: #1e2329;
+  --color-sub: #56606b;
+  --color-celda: #eef2f7;
+  --color-fila: #f8fafc;
+  --color-borde: #c3ccd6;
+  --color-borde-fuerte: #9aa8b8;
+  --color-apagado: #a3adb8;
+  --color-plumon-borde: #e4b3b2;
+  --color-plumon-trama: #f7dada;
+  --color-vino-texto: #f3e6e8;
+  --color-vino-etiqueta: #c59aa2;
+}
+
+@layer base {
+  html {
+    background: var(--color-papel);
+    color: var(--color-texto);
+    font-family: var(--font-sans);
+    font-variant-numeric: tabular-nums;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: var(--color-marca);
+    color: var(--color-texto);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-tinta);
+    outline-offset: 2px;
+  }
+  input,
+  select,
+  textarea {
+    caret-color: var(--color-tinta);
+  }
+  a {
+    text-underline-offset: 3px;
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-borde) transparent;
+  }
+  input[type='date']::-webkit-calendar-picker-indicator {
+    opacity: 0.6;
+  }
+}
+
+/* Celdas inhábiles: rayado de plumón rojo, como se tacha en la agenda. */
+.inhabil {
+  background: repeating-linear-gradient(135deg, var(--color-plumon-trama) 0 3px, var(--color-hoja) 3px 6px);
+}
+
+@keyframes resalta {
+  from {
+    background-color: var(--color-marca-claro);
+  }
+  to {
+    background-color: transparent;
+  }
+}
+.resaltado {
+  animation: resalta 2.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .resaltado {
+    animation: none;
+  }
+}
