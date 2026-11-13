@@ -4,7 +4,7 @@ import { persist } from 'zustand/middleware'
 import { hoy, pesos } from './lib/fechas'
 import { bloqueosCierre, buscarPaso, instanciar, nuevoId, puedeCerrar, requisitosPendientes, saldo } from './lib/motor'
 import { expedientesSemilla, inhabilesSemilla, recurrentesSemilla, tiposSemilla } from './lib/seed'
-import type { Expediente, Fecha, Movimiento, PasoConfig, Recurrente, TipoTramite } from './types'
+import type { Expediente, Fecha, Movimiento, Recurrente, TipoTramite } from './types'
 
 interface Datos {
   tipos: TipoTramite[]
@@ -19,10 +19,6 @@ interface Acciones {
   guardarTipo: (t: TipoTramite) => void
   eliminarTipo: (id: string) => void
   abrirExpediente: (tipoId: string, datos: { partes: string; objeto: string; apertura: Fecha; datos: Record<string, string> }) => string
-  /** Estructura viva: el expediente puede crecer con etapas y pasos que su caso requiera. */
-  agregarEtapaExp: (expId: string, nombre: string) => void
-  agregarPasoExp: (expId: string, etapaId: string, paso: PasoConfig) => void
-  quitarPasoExp: (expId: string, pasoId: string) => void
   atenderAviso: (key: string) => void
   completarPaso: (expId: string, pasoId: string, d: { fecha: Fecha; nota?: string; archivo?: string; monto?: number }) => string | undefined
   noSolicitar: (expId: string, pasoId: string) => void
@@ -47,7 +43,24 @@ function semilla(): Datos {
   return { tipos, expedientes: expedientesSemilla(tipos, hoy()), recurrentes: recurrentesSemilla(), inhabiles: inhabilesSemilla(), avisosAtendidos: [] }
 }
 
-const CLAVE = 'notaria-demo-v1'
+/**
+ * Huella de los datos de ejemplo: si la plantilla, las obligaciones o los inhábiles sembrados cambian,
+ * cambia la clave de almacenamiento y el navegador arranca con la siembra nueva. Nadie sube versiones a mano.
+ */
+function huella(texto: string) {
+  let h = 5381
+  for (let i = 0; i < texto.length; i++) h = ((h << 5) + h + texto.charCodeAt(i)) | 0
+  return (h >>> 0).toString(36)
+}
+const PREFIJO = 'notaria-demo'
+const CLAVE = `${PREFIJO}-${huella(JSON.stringify([tiposSemilla(), recurrentesSemilla(), inhabilesSemilla()]))}`
+
+// Datos guardados con una siembra anterior ya no aplican: se descartan.
+try {
+  for (const k of Object.keys(localStorage)) if (k.startsWith(PREFIJO) && k !== CLAVE) localStorage.removeItem(k)
+} catch {
+  // Sin almacenamiento disponible no hay nada que limpiar.
+}
 
 const nota = (texto: string, fecha: Fecha = hoy()) => ({ id: nuevoId(), fecha, texto })
 
@@ -171,29 +184,6 @@ export const useStore = create<Datos & Acciones>()(
         atenderRecurrente: (id, periodo) =>
           set((s) => ({ recurrentes: s.recurrentes.map((r) => (r.id === id ? { ...r, atendidos: [...r.atendidos, periodo] } : r)) })),
 
-        agregarEtapaExp: (expId, nombre) =>
-          conExp(expId, (e) => {
-            e.etapas.push({ id: nuevoId(), nombre, pasos: [] })
-            e.bitacora.push(nota(`Etapa agregada al expediente: ${nombre}.`))
-          }),
-        agregarPasoExp: (expId, etapaId, paso) =>
-          conExp(expId, (e) => {
-            const etapa = e.etapas.find((x) => x.id === etapaId)
-            if (!etapa || e.estatus === 'cerrado') return
-            etapa.pasos.push({ ...paso, agregado: true, estado: 'pendiente' })
-            e.bitacora.push(nota(`Paso agregado en «${etapa.nombre}»: ${paso.nombre}.`))
-          }),
-        quitarPasoExp: (expId, pasoId) =>
-          conExp(expId, (e) => {
-            // Solo se quitan pasos agregados a mano y aún pendientes; los de la plantilla se marcan «no se solicita».
-            for (const et of e.etapas) {
-              const p = et.pasos.find((x) => x.id === pasoId)
-              if (p?.agregado && p.estado === 'pendiente') {
-                et.pasos = et.pasos.filter((x) => x.id !== pasoId)
-                e.bitacora.push(nota(`Paso quitado de «${et.nombre}»: ${p.nombre}.`))
-              }
-            }
-          }),
         atenderAviso: (key) => set((s) => ({ avisosAtendidos: [...s.avisosAtendidos, key] })),
 
         agregarInhabil: (f) => set((s) => ({ inhabiles: [...new Set([...s.inhabiles, f])].sort() })),
@@ -204,9 +194,6 @@ export const useStore = create<Datos & Acciones>()(
     },
     {
       name: CLAVE,
-      version: 3,
-      // v3: escrituración alineada a pasos_escrituración.md (solicitudes desde la apertura); la demo se recarga.
-      migrate: (_estado, version) => (version < 3 ? semilla() : (_estado as Datos & Acciones)),
     },
   ),
 )

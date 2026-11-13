@@ -1,5 +1,4 @@
-import { ArrowLeft, ChevronDown, ChevronRight, Lock, Paperclip, Plus } from 'lucide-react'
-import { AltaPaso } from '../components/AltaPaso'
+import { ArrowLeft, ChevronDown, ChevronRight, Lock, Paperclip } from 'lucide-react'
 import { useEffect, useId, useRef, useState } from 'react'
 import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { CampoCosto, FormMovimiento, ResumenSaldo, TablaMovimientos } from '../components/Cuenta'
@@ -163,36 +162,8 @@ function Etapas({ exp, foco }: { exp: Expediente; foco: string | null }) {
       {exp.etapas.map((etapa, i) => (
         <SeccionEtapa key={etapa.id} exp={exp} i={i} hoy={hoy} inhabiles={inhabiles} foco={foco} siguiente={siguiente} />
       ))}
-      {exp.estatus === 'abierto' && <AltaEtapa exp={exp} />}
       <LeyendaRegla />
     </div>
-  )
-}
-
-/** El expediente crece con lo que su caso requiera: una etapa nueva al final. */
-function AltaEtapa({ exp }: { exp: Expediente }) {
-  const agregarEtapaExp = useStore((s) => s.agregarEtapaExp)
-  const avisar = useAviso((s) => s.avisar)
-  const [abierto, setAbierto] = useState(false)
-  const [nombre, setNombre] = useState('')
-  if (!abierto) return <Boton className="self-start" onClick={() => setAbierto(true)}><Plus className="h-4 w-4" />Agregar etapa a este expediente</Boton>
-  return (
-    <form
-      className="flex flex-wrap items-end gap-2 border border-raya bg-hoja p-4"
-      onKeyDown={(e) => e.key === 'Escape' && setAbierto(false)}
-      onSubmit={(e) => {
-        e.preventDefault()
-        if (!nombre.trim()) return
-        const copia = structuredClone(exp)
-        agregarEtapaExp(exp.id, nombre.trim())
-        avisar(`Etapa «${nombre.trim()}» agregada a ${exp.folio}; agrégale sus pasos`, () => useStore.getState().restaurarExpediente(copia))
-        setNombre(''); setAbierto(false)
-      }}
-    >
-      <div className="min-w-64 flex-1"><Campo etiqueta="Nombre de la etapa" ayuda="Solo para este expediente; la plantilla no cambia.">{(id) => <Entrada id={id} autoFocus value={nombre} onChange={(e) => setNombre(e.target.value)} />}</Campo></div>
-      <Boton type="submit" variante="primario" disabled={!nombre.trim()}>Agregar etapa</Boton>
-      <Boton onClick={() => setAbierto(false)}>Cancelar</Boton>
-    </form>
   )
 }
 
@@ -211,9 +182,6 @@ function SeccionEtapa({ exp, i, hoy, inhabiles, foco, siguiente }: { exp: Expedi
   const [abierta, setAbierta] = useState(!completa && (enCurso || conVencido || etapa.inicia === 'apertura') || etapa.pasos.some((p) => p.id === foco))
   const Chevron = abierta ? ChevronDown : ChevronRight
   const anterior = exp.etapas[i - 1]?.nombre
-  const { agregarPasoExp, restaurarExpediente } = useStore()
-  const avisar = useAviso((s) => s.avisar)
-  const [agregando, setAgregando] = useState(false)
   return (
     <section aria-labelledby={`etapa-${etapa.id}`}>
       <button type="button" aria-expanded={abierta} onClick={() => setAbierta((v) => !v)} className="mb-2 flex w-full flex-wrap items-baseline gap-x-3 text-left">
@@ -234,22 +202,6 @@ function SeccionEtapa({ exp, i, hoy, inhabiles, foco, siguiente }: { exp: Expedi
           {etapa.pasos.map((p) => (
             <FilaPaso key={p.id} exp={exp} etapaIdx={i} paso={p} hoy={hoy} inhabiles={inhabiles} foco={foco === p.id} principal={siguiente === p.id} habilitada={!!inicio} claves={claves} />
           ))}
-          {exp.estatus === 'abierto' && (
-            <li>
-              {agregando ? (
-                <AltaPaso onCancelar={() => setAgregando(false)} onGuardar={(p) => {
-                  const copia = structuredClone(exp)
-                  agregarPasoExp(exp.id, etapa.id, p)
-                  setAgregando(false)
-                  avisar(`Paso «${p.nombre}» agregado a «${etapa.nombre}»`, () => restaurarExpediente(copia))
-                }} />
-              ) : (
-                <Boton chico variante="fantasma" className="m-2" onClick={() => setAgregando(true)}>
-                  <Plus className="h-4 w-4" />Agregar paso<span className="sr-only"> a {etapa.nombre}</span>
-                </Boton>
-              )}
-            </li>
-          )}
         </ul>
       )}
     </section>
@@ -267,7 +219,7 @@ function FilaPaso({ exp, etapaIdx, paso, hoy, inhabiles, foco, principal, habili
   habilitada: boolean
   claves: string[]
 }) {
-  const { completarPaso, noSolicitar, reabrirPaso, restaurarExpediente, quitarPasoExp } = useStore()
+  const { completarPaso, noSolicitar, reabrirPaso, restaurarExpediente } = useStore()
   const [confirmandoReabrir, setConfirmandoReabrir] = useState(false)
   const avisar = useAviso((s) => s.avisar)
   const abierto = exp.estatus === 'abierto'
@@ -306,18 +258,6 @@ function FilaPaso({ exp, etapaIdx, paso, hoy, inhabiles, foco, principal, habili
             {pendiente && paso.costo && paso.costo.monto > 0 && <span className="text-xs text-sub">estimado {pesos(paso.costo.monto)}</span>}
           </div>
           {paso.descripcion && <p className="mt-0.5 text-xs text-sub">{paso.descripcion}</p>}
-          {paso.agregado && (
-            <p className="mt-0.5 flex items-center gap-2 text-xs text-sub">
-              Agregado a este expediente
-              {pendiente && abierto && (
-                <button type="button" className="text-plumon-hondo hover:underline" onClick={() => {
-                  const copia = structuredClone(exp)
-                  quitarPasoExp(exp.id, paso.id)
-                  avisar(`Paso «${paso.nombre}» quitado`, () => restaurarExpediente(copia))
-                }}>Quitar<span className="sr-only"> {paso.nombre}</span></button>
-              )}
-            </p>
-          )}
           {paso.estado === 'hecho' && (
             <p className="mt-1 flex flex-wrap items-center gap-x-3 text-xs text-sub">
               <span className="text-verde-hondo">Hecho {paso.fechaHecho && fechaMedia(paso.fechaHecho)}</span>

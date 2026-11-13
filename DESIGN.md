@@ -2,9 +2,9 @@
 name: Notaría · Expedientes
 description: Agenda de despacho para el seguimiento de trámites notariales, donde cada plazo se lee como se marca en la agenda del contador.
 colors:
-  vino: "#5e1f2b"
-  vino-hondo: "#4a1822"
-  vino-claro: "#d9bfc4"
+  vino: "#4a6283"
+  vino-hondo: "#3b4f6b"
+  vino-claro: "#d6dfeb"
   tinta: "#1d4fa3"
   tinta-hondo: "#163d80"
   tinta-clara: "#c9d8ee"
@@ -31,8 +31,8 @@ colors:
   apagado: "#a3adb8"
   plumon-borde: "#e4b3b2"
   plumon-trama: "#f7dada"
-  vino-texto: "#f3e6e8"
-  vino-etiqueta: "#c59aa2"
+  vino-texto: "#eef2f7"
+  vino-etiqueta: "#d0dae7"
 typography:
   display:
     fontFamily: "Barlow Semi Condensed, Public Sans, sans-serif"

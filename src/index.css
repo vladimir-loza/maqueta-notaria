@@ -12,9 +12,9 @@
   --font-cond: 'Barlow Semi Condensed', 'Public Sans', sans-serif;
 
   /* Agenda de despacho */
-  --color-vino: #5e1f2b;
-  --color-vino-hondo: #4a1822;
-  --color-vino-claro: #d9bfc4;
+  --color-vino: #4a6283;
+  --color-vino-hondo: #3b4f6b;
+  --color-vino-claro: #d6dfeb;
   --color-papel: #f5f6f2;
   --color-hoja: #ffffff;
   --color-raya: #d5deea;
@@ -41,8 +41,8 @@
   --color-apagado: #a3adb8;
   --color-plumon-borde: #e4b3b2;
   --color-plumon-trama: #f7dada;
-  --color-vino-texto: #f3e6e8;
-  --color-vino-etiqueta: #c59aa2;
+  --color-vino-texto: #eef2f7;
+  --color-vino-etiqueta: #d0dae7;
 }
 
 @layer base {

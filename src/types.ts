@@ -40,8 +40,6 @@ export interface PasoConfig {
   requiere: string[]
   /** Solo entra al expediente si se cumplen todas (vacío o ausente: siempre). */
   condiciones?: Condicion[]
-  /** Paso agregado a mano en un expediente, fuera de la plantilla. */
-  agregado?: boolean
 }
 
 // ---------- Datos de apertura y reglas (configurables por trámite) ----------

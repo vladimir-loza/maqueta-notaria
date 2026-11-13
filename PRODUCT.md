@@ -58,7 +58,6 @@ Caso de referencia, escrituración (fuente: diagrama y modelo funcional). Sirve 
 - Todo paso admite "Solicita Sí/No" (se puede omitir por expediente).
 - Datos de apertura configurables por trámite (texto, monto, lista de opciones, Sí/No). Cada paso puede llevar condiciones sobre esos datos: solo entra al expediente si se cumplen (p. ej. «Acto: Compraventa o Donación», «¿Genera IVA?: Sí»).
 - Reglas de acumulado por trámite: suman un monto entre expedientes que comparten un dato y avisan cada vez que el total rebasa otro múltiplo del umbral (p. ej. ventas de una sociedad > $900,000 para PLD).
-- Estructura viva: un expediente abierto puede recibir etapas y pasos propios, sin tocar la plantilla; todo queda en la bitácora.
 - Plazos por paso en días hábiles o naturales, con origen configurable (apertura, inicio de etapa, otro paso); doble plazo notaría/ley con semáforo.
 - Pasos de pago y costos alimentan la cuenta corriente del expediente.
 - Alertas derivadas de pasos con tiempo o fecha límite (preventiva y vencida), en una vista central y en el expediente.
